@@ -1,0 +1,3 @@
+rootProject.name = 'cgmath'
+
+enableFeaturePreview('GRADLE_METADATA')
