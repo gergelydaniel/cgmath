@@ -11,12 +11,12 @@ private inline fun withMat4(operation: (Mat4) -> Unit): Mat4 {
     return result
 }
 
-fun rotateMatrix(angle: Float, axis: Vec3) = withMat4 {
+public fun rotateMatrix(angle: Float, axis: Vec3): Mat4 = withMat4 {
     rotateMatrix(angle, axis.x, axis.y, axis.z, it)
 }
 
 // Rodrigues matrix
-fun rotateMatrix(angle: Float, axisX: Float, axisY: Float, axisZ: Float, result: Mat4) {
+public fun rotateMatrix(angle: Float, axisX: Float, axisY: Float, axisZ: Float, result: Mat4) {
     val c = cos(angle)
     val s = sin(angle)
 
@@ -43,15 +43,15 @@ fun rotateMatrix(angle: Float, axisX: Float, axisY: Float, axisZ: Float, result:
     result.array[15] = 1f
 }
 
-fun scaleMatrix(x: Float, y: Float, z: Float) = withMat4 {
+public fun scaleMatrix(x: Float, y: Float, z: Float): Mat4 = withMat4 {
     scaleMatrix(x, y, z, it)
 }
 
-fun scaleMatrix(scale: Vec3) = withMat4 {
+public fun scaleMatrix(scale: Vec3): Mat4 = withMat4 {
     scaleMatrix(scale.x, scale.y, scale.z, it)
 }
 
-fun scaleMatrix(sx: Float, sy: Float, sz: Float, result: Mat4) {
+public fun scaleMatrix(sx: Float, sy: Float, sz: Float, result: Mat4) {
     result.array[0] = sx
     result.array[1] = 0f
     result.array[2] = 0f
@@ -70,11 +70,11 @@ fun scaleMatrix(sx: Float, sy: Float, sz: Float, result: Mat4) {
     result.array[15] = 1f
 }
 
-fun translateMatrix(t: Vec3) = withMat4 {
+public fun translateMatrix(t: Vec3): Mat4 = withMat4 {
     translateMatrix(t.x, t.y, t.z, it)
 }
 
-fun translateMatrix(tx: Float, ty: Float, tz: Float, result: Mat4) {
+public fun translateMatrix(tx: Float, ty: Float, tz: Float, result: Mat4) {
     result.array[0] = 1f
     result.array[1] = 0f
     result.array[2] = 0f

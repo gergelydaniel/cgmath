@@ -4,7 +4,7 @@ import com.danielgergely.cgmath.vec3.Vec3
 import com.danielgergely.cgmath.vec4.Vec4
 
 
-operator fun Mat4.times(rhs: Mat4): Mat4 {
+public operator fun Mat4.times(rhs: Mat4): Mat4 {
     val result = Mat4.zero()
     for (i in 0..3) {
         for (j in 0..3) {
@@ -16,7 +16,7 @@ operator fun Mat4.times(rhs: Mat4): Mat4 {
 }
 
 // Implementing timesAssign without object allocation
-operator fun Mat4.timesAssign(other: Mat4) {
+public operator fun Mat4.timesAssign(other: Mat4) {
     val a = array
     val b = other.array
 
@@ -58,7 +58,7 @@ operator fun Mat4.timesAssign(other: Mat4) {
     array[15] = f15
 }
 
-operator fun Mat4.plus(rhs: Mat4): Mat4 {
+public operator fun Mat4.plus(rhs: Mat4): Mat4 {
     val result = Mat4.zero()
     for (i in 0..15) {
         result.array[i] = array[i] + rhs.array[i]
@@ -67,7 +67,7 @@ operator fun Mat4.plus(rhs: Mat4): Mat4 {
 }
 
 
-operator fun Mat4.times(v: Vec3): Vec3 {
+public operator fun Mat4.times(v: Vec3): Vec3 {
     return Vec3(
         v.x * array[0 * 4 + 0] + v.y * array[1 * 4 + 0] + v.z * array[2 * 4 + 0] + array[3 * 4 + 0],
         v.x * array[0 * 4 + 1] + v.y * array[1 * 4 + 1] + v.z * array[2 * 4 + 1] + array[3 * 4 + 1],
@@ -75,7 +75,7 @@ operator fun Mat4.times(v: Vec3): Vec3 {
     )
 }
 
-operator fun Mat4.times(v: Vec4): Vec4 {
+public operator fun Mat4.times(v: Vec4): Vec4 {
     return Vec4(
         v.x * array[0 * 4 + 0] + v.y * array[1 * 4 + 0] + v.z * array[2 * 4 + 0] + v.w * array[3 * 4 + 0],
         v.x * array[0 * 4 + 1] + v.y * array[1 * 4 + 1] + v.z * array[2 * 4 + 1] + v.w * array[3 * 4 + 1],

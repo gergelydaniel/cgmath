@@ -15,7 +15,7 @@ private inline fun withMat4(operation: (Mat4) -> Unit): Mat4 {
  *
  * Based on gluLookAt
  */
-fun lookAt(eye: Vec3, center: Vec3, up: Vec3) = withMat4 {
+public fun lookAt(eye: Vec3, center: Vec3, up: Vec3): Mat4 = withMat4 {
     lookAt(eye.x, eye.y, eye.z, center.x, center.y, center.z, up.x, up.y, up.z, it)
 }
 
@@ -27,7 +27,7 @@ fun lookAt(eye: Vec3, center: Vec3, up: Vec3) = withMat4 {
  *
  * @param result The [Mat4] object to write the result to.
  */
-inline fun lookAt(eye: Vec3, center: Vec3, up: Vec3, result: Mat4) {
+public inline fun lookAt(eye: Vec3, center: Vec3, up: Vec3, result: Mat4) {
     lookAt(eye.x, eye.y, eye.z, center.x, center.y, center.z, up.x, up.y, up.z, result)
 }
 
@@ -39,7 +39,7 @@ inline fun lookAt(eye: Vec3, center: Vec3, up: Vec3, result: Mat4) {
  *
  * @param result The [Mat4] object to write the result to.
  */
-fun lookAt(
+public fun lookAt(
     eyeX: Float, eyeY: Float, eyeZ: Float,
     centerX: Float, centerY: Float, centerZ: Float,
     upX: Float, upY: Float, upZ: Float,

@@ -3,7 +3,7 @@ package com.danielgergely.cgmath.mat3
 import com.danielgergely.cgmath.vec2.Vec2
 import com.danielgergely.cgmath.vec3.Vec3
 
-operator fun Mat3.times(rhs : Mat3) : Mat3 {
+public operator fun Mat3.times(rhs : Mat3) : Mat3 {
     val result = Mat3.zero()
     for (i in 0..2) {
         for (j in 0..2) {
@@ -14,7 +14,7 @@ operator fun Mat3.times(rhs : Mat3) : Mat3 {
     return result
 }
 
-operator fun Mat3.timesAssign(other : Mat3) {
+public operator fun Mat3.timesAssign(other : Mat3) {
     val a = array
     val b = other.array
 
@@ -41,13 +41,13 @@ operator fun Mat3.timesAssign(other : Mat3) {
     array[8] = f8
 }
 
-operator fun Mat3.times(v: Vec3) = Vec3(
+public operator fun Mat3.times(v: Vec3): Vec3 = Vec3(
     array[0] * v.x + array[3] * v.y + array[6] * v.z,
     array[1] * v.x + array[4] * v.y + array[7] * v.z,
     array[2] * v.x + array[5] * v.y + array[8] * v.z
 )
 
-operator fun Mat3.times(v: Vec2) = Vec2(
+public operator fun Mat3.times(v: Vec2): Vec2 = Vec2(
     array[0] * v.x + array[3] * v.y + array[6] * 1f,
     array[1] * v.x + array[4] * v.y + array[7] * 1f
 )

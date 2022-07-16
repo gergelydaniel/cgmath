@@ -9,15 +9,15 @@ private inline fun withMat3(operation: (Mat3) -> Unit): Mat3 {
     return result
 }
 
-fun translateMatrix2d(t: Vec2) = withMat3 {
+public fun translateMatrix2d(t: Vec2): Mat3 = withMat3 {
     translateMatrix2d(t.x, t.y, it)
 }
 
-fun translateMatrix2d(x: Float, y: Float) = withMat3 {
+public fun translateMatrix2d(x: Float, y: Float): Mat3 = withMat3 {
     translateMatrix2d(x, y, it)
 }
 
-fun translateMatrix2d(x: Float, y: Float, result: Mat3) {
+public fun translateMatrix2d(x: Float, y: Float, result: Mat3) {
     result.array[0] = 1f
     result.array[1] = 0f
     result.array[2] = 0f
@@ -30,15 +30,15 @@ fun translateMatrix2d(x: Float, y: Float, result: Mat3) {
 }
 
 
-fun scaleMatrix2d(s: Vec2) = withMat3 {
+public fun scaleMatrix2d(s: Vec2): Mat3 = withMat3 {
     scaleMatrix2d(s.x, s.y, it)
 }
 
-fun scaleMatrix2d(x: Float, y: Float) = withMat3 {
+public fun scaleMatrix2d(x: Float, y: Float): Mat3 = withMat3 {
     scaleMatrix2d(x, y, it)
 }
 
-fun scaleMatrix2d(x: Float, y: Float, result: Mat3) {
+public fun scaleMatrix2d(x: Float, y: Float, result: Mat3) {
     result.array[0] = x
     result.array[1] = 0f
     result.array[2] = 0f

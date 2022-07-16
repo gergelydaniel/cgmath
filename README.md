@@ -11,10 +11,10 @@ At this moment the library is only available from my repository:
 
 ```groovy
 repositories {
-    maven { url 'https://maven.danielgergely.com/repository/releases' }
+    maven { url 'https://maven.danielgergely.com/releases' }
 }
 dependencies {
-    implementation 'com.danielgergely.cgmath:cgmath:1.0'
+    implementation 'com.danielgergely.cgmath:cgmath:2.0.0'
 }
 ```
 
@@ -47,7 +47,7 @@ val vector: Vec4
 val transformed = matrix * vector
 ```
 
-#### Swizzling, destructing
+#### Swizzling, destructuring
 
 ```kotlin
 val space = Vec3(…)

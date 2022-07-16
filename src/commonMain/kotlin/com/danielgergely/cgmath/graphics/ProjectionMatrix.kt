@@ -9,7 +9,7 @@ import kotlin.math.tan
  *
  * Based on gluPerspective
  */
-inline fun perspective(fovy: Float, aspect: Float, zNear: Float, zFar: Float) : Mat4 {
+public inline fun perspective(fovy: Float, aspect: Float, zNear: Float, zFar: Float) : Mat4 {
     val result = Mat4.zero()
     perspective(fovy, aspect, zNear, zFar, result)
     return result
@@ -20,7 +20,7 @@ inline fun perspective(fovy: Float, aspect: Float, zNear: Float, zFar: Float) : 
  *
  * Based on gluPerspective
  */
-fun perspective(fovy: Float, aspect: Float, zNear: Float, zFar: Float, result: Mat4) {
+public fun perspective(fovy: Float, aspect: Float, zNear: Float, zFar: Float, result: Mat4) {
     val f = 1.0f / tan(fovy * (PI / 360.0)).toFloat()
     val rangeReciprocal = 1.0f / (zNear - zFar)
 

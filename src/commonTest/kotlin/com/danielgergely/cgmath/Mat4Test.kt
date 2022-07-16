@@ -7,6 +7,7 @@ import com.danielgergely.cgmath.mat4.timesAssign
 import com.danielgergely.cgmath.vec3.Vec3
 import com.danielgergely.cgmath.vec4.Vec4
 import kotlin.test.Test
+import kotlin.test.assertContentEquals
 import kotlin.test.assertTrue
 
 class Mat4Test {
@@ -155,5 +156,21 @@ class Mat4Test {
         val result = mat4 * v
 
         assertTrue { result closeTo expected }
+    }
+
+    @Test
+    fun mat4Copy() {
+        val mat4 = Mat4.from(
+            floatArrayOf(
+                1f, 20f, 3f, 4f,
+                5f, 6f, -5f, 8f,
+                0f, 10f, 11f, 12f,
+                13f, 14f, 15f, 29f
+            )
+        )
+
+        val other = Mat4.from(mat4.array)
+
+        assertContentEquals(mat4.array, other.array)
     }
 }
