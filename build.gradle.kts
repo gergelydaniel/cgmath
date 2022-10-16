@@ -1,5 +1,5 @@
 plugins {
-    id("org.jetbrains.kotlin.multiplatform") version "1.7.10"
+    id("org.jetbrains.kotlin.multiplatform") version "1.7.20"
     id("maven-publish")
 }
 
@@ -8,7 +8,7 @@ repositories {
 }
 
 group = "com.danielgergely.cgmath"
-version = "2.0.0"
+version = "2.1.0"
 
 kotlin {
     explicitApi()

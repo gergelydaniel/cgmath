@@ -14,7 +14,7 @@ repositories {
     maven { url 'https://maven.danielgergely.com/releases' }
 }
 dependencies {
-    implementation 'com.danielgergely.cgmath:cgmath:2.0.0'
+    implementation 'com.danielgergely.cgmath:cgmath:2.1.0'
 }
 ```
 
@@ -25,9 +25,9 @@ Or you can build it manually:
 
 ### Types
 
-* `Vec2`: a two dimensional vector of 32-bit floats
-* `Vec3`: a two dimensional vector of 32-bit floats
-* `Vec4`: a two dimensional vector of 32-bit floats
+* `Vec2`: a two-dimensional vector of 32-bit floats
+* `Vec3`: a two-dimensional vector of 32-bit floats
+* `Vec4`: a two-dimensional vector of 32-bit floats
 * `Mat3`: a 3x3 column-major matrix of 32-bit floats
 * `Mat4`: a 4x4 column-major matrix of 32-bit floats
 
